@@ -1,1 +1,5 @@
-*.gform 
+*.gform
+__pycache__/
+*.log
+*.tmp
+
