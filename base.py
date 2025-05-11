@@ -40,7 +40,7 @@ for _, row in df.iterrows():
     os.makedirs(qr_dir, exist_ok=True)
 
     # Codificar nombre para envío por formulario
-    nombre_encoded = urllib.parse.quote(nombre)
+    nombre = urllib.parse.quote(nombre)
 
     # Crear contenido HTML
     html_content = f"""<!DOCTYPE html>
@@ -53,7 +53,7 @@ for _, row in df.iterrows():
   <h1>Hola, {nombre}</h1>
   <p>Haz clic en el botón para registrar tu asistencia.</p>
   <form action="{FORM_URL}" method="post" target="_self" onsubmit="this.style.display='none'; document.getElementById('mensaje').style.display='block'">
-    <input type="hidden" name="{ENTRY_NOMBRE}" value="{nombre_encoded}">
+    <input type="hidden" name="{ENTRY_NOMBRE}" value="{nombre}">
     <input type="hidden" name="{ENTRY_GRUPO}" value="{grupo}">
     <input type="submit" value="Registrar asistencia">
   </form>
