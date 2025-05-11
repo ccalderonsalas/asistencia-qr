@@ -13,13 +13,19 @@ TEMPLATE = """
 <body>
   <h1>Hola, {{ nombre }}</h1>
   <p>Haz clic en el botón para registrar tu asistencia.</p>
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLScv6cazqFQBkeQTrz9upAyth4Kl8Rj2HTFOTOPb5zJ1IM_AVQ/formResponse" method="post" target="_self">
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLScv6cazqFQBkeQTrz9upAyth4Kl8Rj2HTFOTOPb5zJ1IM_AVQ/formResponse" method="post" target="_self" onsubmit="this.style.display='none'; document.getElementById('mensaje').style.display='block'">
     <input type="hidden" name="entry.29459669" value="{{ nombre }}">
     <input type="submit" value="Registrar asistencia">
   </form>
+
+  <div id="mensaje" style="display:none;">
+    <h3>✅ ¡Asistencia registrada con éxito!</h3>
+    <p>Gracias, {{ nombre }}. Puedes cerrar esta página.</p>
+  </div>
 </body>
 </html>
 """
+
 
 
 def crear_archivos_estudiantes(nombre_archivo):
