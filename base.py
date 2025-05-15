@@ -30,7 +30,7 @@ for _, row in df.iterrows():
         nombre.upper()
         .replace("Á", "A").replace("É", "E").replace("Í", "I")
         .replace("Ó", "O").replace("Ú", "U").replace("Ñ", "N")
-        .replace("Ü", "U").replace(" ", "_")
+        .replace("Ü", "U")
     )
 
     # Crear carpetas por grupo
@@ -40,7 +40,7 @@ for _, row in df.iterrows():
     os.makedirs(qr_dir, exist_ok=True)
 
     # Codificar nombre para envío por formulario
-    nombre = urllib.parse.quote(nombre)
+   # nombre_encoded = urllib.parse.quote(nombre)
 
     # Crear contenido HTML
     html_content = f"""<!DOCTYPE html>
